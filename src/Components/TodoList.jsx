@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Input from "./Common/Input";
 import List from "./List";
-
 import "../Styles/TodoList.css";
 
 const TodoList = () => {
@@ -24,7 +24,8 @@ const TodoList = () => {
     <div className="container">
       <h2>Todo App</h2>
       <div className="input-holder">
-        <input type="text" value={inputValue} onChange={handleChange} />
+        <Input value={inputValue} onChange={handleChange} type="text" />
+        {/* <input type="text" value={inputValue} onChange={handleChange} /> */}
         <button onClick={handleClick}>Add</button>
       </div>
       <List task={tasks} />
