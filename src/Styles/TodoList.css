@@ -10,6 +10,10 @@
 
 
 
+
+}
+.input-holder{
+    width: 100%;
 }
 .container h2{
     color: whitesmoke;
@@ -17,11 +21,13 @@
 .container button{
     border: none;
     background-color: whitesmoke;
-    padding: 7px;
-    border-radius: 2px;
+    padding: 9px;
+    border-radius: 1px;
 
 }
 .container input{
     padding: 5px;
     outline: none;
+    width: 59%;
+    padding: 7px;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import List from "./Common/List";
+import List from "./List";
 
 import "../Styles/TodoList.css";
 
