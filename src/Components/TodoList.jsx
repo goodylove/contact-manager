@@ -9,7 +9,7 @@ const TodoList = () => {
 
   const handleChange = ({ target: input }) => {
     const inputValue = input.value;
-    // console.log(inputValue);
+
     setInputValue(inputValue);
     return inputValue;
   };
@@ -17,7 +17,7 @@ const TodoList = () => {
   const handleClick = () => {
     setTasks([...tasks, inputValue]);
     setInputValue("");
-    console.log(tasks);
+
     return tasks;
   };
   return (
@@ -25,7 +25,6 @@ const TodoList = () => {
       <h2>Todo App</h2>
       <div className="input-holder">
         <Input value={inputValue} onChange={handleChange} type="text" />
-        {/* <input type="text" value={inputValue} onChange={handleChange} /> */}
         <button onClick={handleClick}>Add</button>
       </div>
       <List task={tasks} />

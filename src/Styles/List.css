@@ -15,4 +15,9 @@ li{
     margin: 10px;
     width: 77%;
     border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+li span{
+    padding: 4px;
 }
