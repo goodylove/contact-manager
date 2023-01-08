@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+   align-items: center;
+    width: 320px;
+    flex-direction: column;
+    background-color: black;
+    height: 500px;
+    border-radius: 10px ;
+    box-shadow: 1px  1px 1px 1px  whitesmoke, -1px -1px  1px 1px whitesmoke
+
+
+
+}
+.container h2{
+    color: whitesmoke;
+}
+.container button{
+    border: none;
+    background-color: whitesmoke;
+    padding: 7px;
+    border-radius: 2px;
+
+}
+.container input{
+    padding: 5px;
+    outline: none;
+}

@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+ background-color: rgb(180, 251, 180);
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
 }
 
 .App-logo {
@@ -11,6 +17,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.task{
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -36,3 +46,4 @@
     transform: rotate(360deg);
   }
 }
+
