@@ -15,9 +15,10 @@ const TodoList = () => {
   };
 
   const handleClick = () => {
-    const tasks = inputValue;
-    setTasks([...tasks, tasks]);
+    setTasks([...tasks, inputValue]);
+    setInputValue("");
     console.log(tasks);
+    return tasks;
   };
   return (
     <div className="container">
