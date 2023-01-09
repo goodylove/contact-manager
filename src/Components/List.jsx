@@ -1,14 +1,14 @@
 import React from "react";
 import "../Styles/List.css";
-const List = ({ task }) => {
+const List = ({ task, onDelete }) => {
   return (
     <ul>
       {task.map((item, index) => {
         return (
-          <li key={index}>
+          <li key={index} id={index}>
             <span> {item}</span>
             <span>
-              <i className="fa fa-trash"></i>
+              <i onClick={() => onDelete(item)} className="fa fa-trash"></i>
             </span>
           </li>
         );

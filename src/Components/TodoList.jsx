@@ -15,10 +15,24 @@ const TodoList = () => {
   };
 
   const handleClick = () => {
-    setTasks([...tasks, inputValue]);
+    if (!inputValue) {
+      setTasks([...tasks]);
+    } else {
+      setTasks([...tasks, inputValue]);
+    }
     setInputValue("");
-
     return tasks;
+  };
+
+  const deleteTask = (e) => {
+    const newTask = tasks.filter((m) => {
+      if (m === e) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    setTasks(newTask);
   };
   return (
     <div className="container">
@@ -27,7 +41,7 @@ const TodoList = () => {
         <Input value={inputValue} onChange={handleChange} type="text" />
         <button onClick={handleClick}>Add</button>
       </div>
-      <List task={tasks} />
+      <List task={tasks} id={tasks} onDelete={deleteTask} />
     </div>
   );
 };
