@@ -14,24 +14,22 @@ const TodoList = () => {
     return inputValue;
   };
 
-  const handleClick = () => {
-    if (!inputValue) {
-      setTasks([...tasks]);
-    } else {
-      setTasks([...tasks, inputValue]);
-    }
-    setInputValue("");
-    return tasks;
-  };
+  const addTasks = () => {
+    const newTask = {
+      id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
+      complete: false,
+      taskName: inputValue,
+    };
 
+    const inputIsTrue = inputValue
+      ? setTasks([...tasks, newTask])
+      : setTasks([...tasks]);
+
+    return inputIsTrue;
+  };
   const deleteTask = (e) => {
-    const newTask = tasks.filter((m) => {
-      if (m === e) {
-        return false;
-      } else {
-        return true;
-      }
-    });
+    const newTask = tasks.filter((m) => m.id !== e.id);
+
     setTasks(newTask);
   };
   return (
@@ -39,9 +37,9 @@ const TodoList = () => {
       <h2>Todo App</h2>
       <div className="input-holder">
         <Input value={inputValue} onChange={handleChange} type="text" />
-        <button onClick={handleClick}>Add</button>
+        <button onClick={addTasks}>Add</button>
       </div>
-      <List task={tasks} id={tasks} onDelete={deleteTask} />
+      <List task={tasks} onDelete={deleteTask} />
     </div>
   );
 };
