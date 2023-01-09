@@ -14,6 +14,8 @@
 }
 .input-holder{
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 .container h2{
     color: whitesmoke;
@@ -24,10 +26,12 @@
     padding: 9px;
     border-radius: 1px;
 
+
 }
 .container input{
+    
     padding: 5px;
     outline: none;
-    width: 59%;
+    width: 55%;
     padding: 7px;
 }
