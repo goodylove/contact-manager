@@ -3,7 +3,7 @@ import Input from "./Common/Input";
 
 const buttonStyle = {
   backgroundColor: "#fff",
-  padding: "10px",
+  padding: "0 10px",
 };
 
 const Item = ({
