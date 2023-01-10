@@ -6,7 +6,6 @@ import "../Styles/TodoList.css";
 const TodoList = () => {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
-  console.log(tasks);
 
   const handleChange = ({ target: input }) => {
     const inputValue = input.value;
@@ -31,7 +30,6 @@ const TodoList = () => {
   const deleteTask = (itemId) => {
     const newTask = tasks.filter((item) => item.id !== itemId);
     setTasks(newTask);
-    console.log("hi");
   };
 
   const completeTask = (itemId) => {
