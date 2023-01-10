@@ -19,7 +19,7 @@ li{
     justify-content: space-between;
 }
 li span{
-    padding: 4px;
+    padding: 5px;
 }
 .iscomplete{
     background-color: green;

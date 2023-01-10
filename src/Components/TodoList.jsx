@@ -17,7 +17,7 @@ const TodoList = () => {
   const addTasks = () => {
     const newTask = {
       id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
-      complete: false,
+      completed: false,
       taskName: inputValue,
     };
 
@@ -33,6 +33,18 @@ const TodoList = () => {
     console.log("hi");
   };
 
+  const completeTask = (item) => {
+    const task = tasks.map((task) => {
+      if (item === task) {
+        return { ...task, completed: true };
+      } else {
+        return task;
+      }
+    });
+    console.log("working");
+    setTasks(task);
+  };
+
   return (
     <div className="container">
       <h2>Todo App</h2>
@@ -40,7 +52,12 @@ const TodoList = () => {
         <Input value={inputValue} onChange={handleChange} type="text" />
         <button onClick={addTasks}>Add</button>
       </div>
-      <List task={tasks} onDelete={deleteTask} />
+      <List
+        task={tasks}
+        onDelete={deleteTask}
+        onCheck={completeTask}
+        completedTask={completed}
+      />
     </div>
   );
 };
