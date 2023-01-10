@@ -21,3 +21,9 @@ li{
 li span{
     padding: 4px;
 }
+.iscomplete{
+    background-color: green;
+}
+.isNotCompltete{
+    background-color: whitesmoke;
+}

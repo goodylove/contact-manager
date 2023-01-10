@@ -27,11 +27,12 @@ const TodoList = () => {
 
     return inputIsTrue;
   };
-  const deleteTask = (e) => {
-    const newTask = tasks.filter((m) => m.id !== e.id);
-
+  const deleteTask = (itemId) => {
+    const newTask = tasks.filter((item) => item.id !== itemId);
     setTasks(newTask);
+    console.log("hi");
   };
+
   return (
     <div className="container">
       <h2>Todo App</h2>
