@@ -6,6 +6,7 @@ import "../Styles/TodoList.css";
 const TodoList = () => {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
+  console.log(tasks);
 
   const handleChange = ({ target: input }) => {
     const inputValue = input.value;
@@ -33,16 +34,38 @@ const TodoList = () => {
     console.log("hi");
   };
 
-  const completeTask = (item) => {
-    const task = tasks.map((task) => {
-      if (item === task) {
-        return { ...task, completed: true };
-      } else {
-        return task;
-      }
-    });
-    console.log("working");
-    setTasks(task);
+  const completeTask = (itemId) => {
+    // const task = tasks.map((task) => {
+    //   if (item.id === task.id) {
+    //     return { ...task, completed: true };
+    //   } else {
+    //     return task;
+    //   }
+    // });
+    // console.log("working");
+    // setTasks(task);
+
+    const newTasks = [...tasks];
+    const item = newTasks.find((task) => task.id === itemId);
+    item.completed = !item.completed;
+
+    setTasks(newTasks);
+  };
+
+  const handleEditMode = (itemId, value) => {
+    const newTasks = [...tasks];
+    const item = newTasks.find((task) => task.id === itemId);
+    item.editMode = value;
+
+    setTasks(newTasks);
+  };
+
+  const handleEditModeComplete = (itemId, value) => {
+    const newTasks = [...tasks];
+    const item = newTasks.find((task) => task.id === itemId);
+    item.taskName = value;
+
+    setTasks(newTasks);
   };
 
   return (
@@ -56,7 +79,8 @@ const TodoList = () => {
         task={tasks}
         onDelete={deleteTask}
         onCheck={completeTask}
-        completedTask={completed}
+        onEditMode={handleEditMode}
+        onEditModeComplete={handleEditModeComplete}
       />
     </div>
   );
