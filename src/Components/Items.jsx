@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 import Input from "./Common/Input";
 
-const Item = ({ item, onEditMode, onCheck, onDelete, onEditModeComplete }) => {
+const buttonStyle = {
+  backgroundColor: "#fff",
+  padding: "10px",
+};
+
+const Item = ({
+  item,
+  onEditMode,
+  onCheck,
+  onDelete,
+  onEditModeComplete,
+  style,
+}) => {
   const [editValue, setEditValue] = useState(item.taskName);
 
   return (
@@ -26,6 +38,7 @@ const Item = ({ item, onEditMode, onCheck, onDelete, onEditModeComplete }) => {
               onClick={() => onCheck(item.id)}
               className={`fa fa-${!item.completed ? "check-square" : "times"}`}
               aria-hidden="true"
+              style={buttonStyle}
             ></i>
 
             <i onClick={() => onDelete(item.id)} className="fa fa-trash"></i>
@@ -46,10 +59,11 @@ const Item = ({ item, onEditMode, onCheck, onDelete, onEditModeComplete }) => {
             }}
           />
 
-          <button type="submit">
+          <button type="submit" style={buttonStyle}>
             <i className="fa fa-check-square"></i>
           </button>
           <button
+            style={buttonStyle}
             type="button"
             onClick={() => {
               onEditMode(item.id, false);

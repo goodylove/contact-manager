@@ -3,11 +3,6 @@ import React from "react";
 import Items from "./Items";
 import "../Styles/List.css";
 
-// const buttonStyle = {
-//   backgroundColor: "rgba(255, 255, 200, 1)",
-//   paading: "5px",
-// };
-
 const List = ({
   task,
   onDelete,

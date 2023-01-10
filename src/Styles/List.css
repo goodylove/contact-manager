@@ -13,17 +13,11 @@ li{
     color: black;
     padding: 5px;
     margin: 5px;
-    width: 75%;
+    width: 80%;
     border-radius: 2px;
     display: flex;
     justify-content: space-between;
 }
 li span{
     padding: 5px;
-}
-.iscomplete{
-    background-color: green;
-}
-.isNotCompltete{
-    background-color: whitesmoke;
 }
